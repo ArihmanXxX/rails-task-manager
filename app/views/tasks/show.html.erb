@@ -3,9 +3,15 @@
     <button class="d-flex justify-content-center" class="btn btn-white"><%= link_to "Edit", edit_task_path(@task.id) %></button>
     <p class="border border-3"><%= @task.details %></p>
       <%if @task.completed %>
-        <p class="fa fa-check-square-o"><%= "This task is completed" %></p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked"><%= "This task is completed" %></label>
+            </div>
       <% else %>
-        <p class="fa fa-square-o"><%= "This task is not completed" %></p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault"><%= "This task is not completed" %></label>
+            </div>
       <% end %>
     <p><%= link_to "Back to list", tasks_path %></p>
 
